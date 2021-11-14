@@ -1,0 +1,28 @@
+.current {
+  background-color: rgb(62, 162, 216);
+  color: white;
+}
+.other {
+  background-color: rgb(247, 247, 247);
+}
+.done span {
+  display: none;
+}
+.done::after {
+  content: "\2713";
+  color: rgb(62, 162, 216);
+  background-color: rgb(247, 247, 247);
+  padding: 3px 10px;
+  margin-right: -10px;
+  margin-left: 0px;
+  border-radius: 5px;
+}
+
+.current,
+.other,
+.done {
+  display: inline;
+  padding: 3px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+}

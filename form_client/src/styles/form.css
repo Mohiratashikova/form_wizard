@@ -1,0 +1,150 @@
+.Form {
+  background-color: #fff;
+  width: 80vw;
+  height: 80vh;
+  color: #000;
+  display: flex;
+  border-radius: 30px;
+}
+
+.menu {
+  display: flex;
+  text-align: left;
+  padding: 0;
+}
+h4 {
+  margin: 7px 0px;
+}
+ol li {
+  list-style-type: none;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.form-container {
+  padding: 5% 8%;
+  width: 100%;
+}
+
+hr {
+  border-top: 1px solid rgb(242, 235, 235);
+}
+
+input[type="date"] {
+  font-family: "Lora", serif;
+  background-color: rgb(247, 247, 247);
+}
+label,
+p {
+  font-size: 10px;
+  display: block;
+}
+
+form .form-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .form-input {
+  width: 100%;
+  margin: 0px;
+  padding-right: 40px;
+}
+form .form-input input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(205, 202, 202);
+  font-family: "Lora";
+}
+
+form .form-button {
+  display: flex;
+  justify-content: right;
+  padding-right: 25px;
+}
+
+form span {
+  font-size: 10px;
+  margin-top: 0px;
+  padding: 0px;
+  color: red;
+}
+
+input[type="radio"] {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+label.radio {
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+form .form-radio-line {
+  display: flex;
+}
+
+.form-radio {
+  display: flex;
+  margin: 5px 10px;
+}
+
+input[type="button"] {
+  cursor: pointer;
+  border: none;
+  background-size: cover;
+  resize: both;
+  min-width: 100px;
+  min-height: 90px;
+}
+
+.buttonChoice1 {
+  background-image: url("../images/choice1.png");
+}
+.buttonChoice2 {
+  background-image: url("../images/choice2.png");
+}
+.choice {
+  display: flex;
+}
+
+/* HIDE RADIO */
+.choice [type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type="radio"] + img {
+  cursor: pointer;
+}
+
+[type="radio"]:checked + img {
+  outline: 2px solid rgb(74, 161, 208);
+}
+
+.form-image {
+  height: 100px;
+  border: 1px solid #eee;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.errors {
+  min-height: 15px;
+  max-height: 20px;
+  display: flex;
+  align-items: baseline;
+}
+
+.error label {
+  color: red;
+}
+form .error input,
+form .error textarea {
+  border: 2px solid red;
+}
