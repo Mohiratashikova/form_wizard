@@ -1,10 +1,5 @@
 const { db } = require("../util/admin");
 
-// const config = require("../util/config");
-
-// const firebase = require("firebase");
-// firebase.initializeApp(config);
-
 const { validateEmail } = require("../util/validators");
 
 // Sign users up
@@ -31,31 +26,6 @@ exports.signup = (req, res) => {
       console.error(err);
     });
 };
-
-// exports.getUsers = (req, res) => {
-//   let users = [];
-//   db.collection("users")
-//     .get()
-//     .then((data) => {
-//       data.forEach((doc) => {
-//         console.log("here");
-//         users.push({
-//           userId: doc.id,
-//           message: doc.data().message,
-//           email: doc.data().email,
-//           lastName: doc.data().lastName,
-//           firstName: doc.data().firstName,
-//           dateOfBirth: doc.data().dateOfBirth,
-//           address: doc.data().address,
-//         });
-//       });
-//       return res.json(users);
-//     })
-//     .catch((err) => {
-//       res.status(500).json({ error: "something went wrong" });
-//       console.error(err);
-//     });
-// };
 
 exports.checkEmail = (req, res) => {
   const email = req.query.email;
