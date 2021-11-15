@@ -4,7 +4,8 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:5000/form-c4eaf/us-central1/api";
+axios.defaults.baseURL =
+  "https://us-central1-form-c4eaf.cloudfunctions.net/api";
 function App() {
   return (
     <Provider store={store}>
