@@ -6,9 +6,10 @@ import Message from "./Message";
 import Checkbox from "./Checkbox";
 import Index from "./Index";
 import Success from "./Success";
+import Summary from "./Summary";
 class Form extends Component {
   render() {
-    const { page, messageDone } = this.props;
+    const { page, messageDone, checkboxDone } = this.props;
 
     return (
       <div className="form-container">
@@ -29,9 +30,22 @@ class Form extends Component {
           <li>
             <Index
               name="3"
-              styling={page === "checkbox" ? "current" : "other"}
+              styling={
+                page === "checkbox"
+                  ? "current"
+                  : checkboxDone
+                  ? "done"
+                  : "other"
+              }
             />
             Checkbox
+          </li>
+          <li>
+            <Index
+              name="4"
+              styling={page === "summary" ? "current" : "other"}
+            />
+            Summary
           </li>
         </ol>
         <hr />
@@ -41,6 +55,8 @@ class Form extends Component {
           <Message />
         ) : page === "checkbox" ? (
           <Checkbox />
+        ) : page === "summary" ? (
+          <Summary />
         ) : (
           <Success />
         )}
@@ -51,6 +67,7 @@ class Form extends Component {
 const mapStateToProps = (state) => ({
   page: state.data.page,
   messageDone: state.data.user.messageDone,
+  checkboxDone: state.data.user.checkboxDone,
 });
 
 export default connect(mapStateToProps)(Form);

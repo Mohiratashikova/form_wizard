@@ -148,3 +148,14 @@ form .error input,
 form .error textarea {
   border: 2px solid red;
 }
+.summary .data {
+  display: flex;
+  align-items: baseline;
+}
+.summary p {
+  font-weight: bold;
+  margin: 10px;
+}
+.summary span {
+  font-size: 10px;
+}

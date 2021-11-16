@@ -47,15 +47,18 @@ export const updateMessage = (message, choice) => {
   };
 };
 
-export const updateCheckbox = (choicePicture, choice2, user) => (dispatch) => {
-  dispatch({ type: LOADING_DATA });
+export const updateCheckbox = (choicePicture, choice2) => (dispatch) => {
   dispatch({
     type: UPDATE_USER,
-    payload: { choicePicture, choice2 },
+    payload: { choicePicture, choice2, checkboxDone: true },
   });
+  dispatch(pageChange("summary"));
+};
 
+export const submitUser = (user) => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
   axios
-    .post("/signup", { ...user, choicePicture, choice2 })
+    .post("/signup", { ...user })
     .then(() => {
       dispatch({
         type: CLEAR_ERRORS,
